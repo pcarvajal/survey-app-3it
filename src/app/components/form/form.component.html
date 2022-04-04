@@ -1,0 +1,17 @@
+<div class="container">
+  <form action="" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email" class="form-label mt-5">Email</label>
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="email" [(ngModel)] = "email" placeholder="usuario@mail.com" >
+    </div>
+    <div class="mb-3">
+      <select class="form-select" aria-label="genre" name="genreCode" [(ngModel)] = "genreCode">
+        <option value="">Seleccionar ...</option>
+        <option [value]="genre.code" *ngFor="let genre of getAllGenreResponse.genres">{{ genre.description }}</option>
+      </select>
+    </div>
+    <p class="lead d-grid gap-2 d-md-block mt-5">
+      <button class="btn btn-dark">Enviar</button>
+    </p>
+  </form>
+</div>
